@@ -1,1 +1,5 @@
-[<i class="fa fa-file-text-o" style="font-size:1em;"></i>Post](http:/otakumesi.io/post)
+# TODO デザイン考えて編集する
+
+- (Post)[http://otakumesi.io/post]
+- (Qiita)[http://qiita.com/Otakumesi]
+- (Github)[https://github.com/otakumesi]
