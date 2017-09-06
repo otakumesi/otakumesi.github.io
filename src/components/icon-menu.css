@@ -1,0 +1,6 @@
+.icon-menu .icon-button:first-child {
+}
+
+.icon-menu .icon-button:nth-child(1+n) {
+    visibility: hidden;
+}
