@@ -76,6 +76,10 @@
   transition-delay: 0.3s;
 }
 
+.icon-menu.icon-active .circle-button:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
 .icon-menu.icon-hidden .circle-button {
   transition-delay: 0s;
 }
