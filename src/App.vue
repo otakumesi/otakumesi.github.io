@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <IconMenu>
-      <CircleButton icon="plus" bg-color="#FF9800"></CircleButton>
+      <CircleButton bg-color="#FF9800" trigger-component><Icon name="plus" scale="4"></Icon></CircleButton>
       <CircleButton icon="github" bg-color="#9E9E9E">
         <a href="https://github.com/otakumesi"><Icon name="github" scale="4"></Icon></a>
       </CircleButton>
@@ -21,6 +21,7 @@ import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 import IconMenu from './components/IconMenu'
 import CircleButton from './components/CircleButton'
+import './components/icon-menu.css'
 
 export default {
   name: 'app',

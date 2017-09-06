@@ -29,10 +29,14 @@ button {
   border-radius: 50px;
   text-align: center;
   vertical-align: middle;
-  color: white;
+  color: black;
 }
 
-button:hover {
-  color: white;
+button a {
+  color: black;
+}
+
+button a:hover {
+  color: black;
 }
 </style>
