@@ -12,7 +12,7 @@
         <a href="https://twitter.com/otakumesi" target="_blank"><Icon name="twitter" scale="4"></Icon></a>
       </CircleButton>
       <CircleButton bg-color="#FFC107">
-        <a href="https://otakumesi.io/post" target="_blank"><Icon name="align-left" scale="4"></Icon></a>
+        <a href="http://otakumesi.io/post" target="_blank"><Icon name="align-left" scale="4"></Icon></a>
       </CircleButton>
     </IconMenu>
   </div>
