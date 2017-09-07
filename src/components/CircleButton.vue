@@ -30,6 +30,7 @@ button {
   text-align: center;
   vertical-align: middle;
   color: black;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
 }
 
 button a {
@@ -38,5 +39,9 @@ button a {
 
 button a:hover {
   color: black;
+}
+
+button:active {
+  box-shadow: none;
 }
 </style>
