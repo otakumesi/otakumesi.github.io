@@ -1,15 +1,18 @@
 <template>
   <div class="circle-button">
-    <button :style="buttonStyle"><slot></slot></button>
+    <a :href="href" target="_blank">
+      <button :style="buttonStyle"><slot></slot></button>
+    </a>
   </div>
 </template>
 
 <script>
   export default {
     name: 'cicle-button',
-    props: ['bgColor'],
+    props: ['bgColor', 'href'],
     data () {
       return {
+        href: this.href,
         buttonStyle: { 'background-color': this.bgColor }
       }
     }
