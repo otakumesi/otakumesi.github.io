@@ -41,7 +41,28 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 100%;
+}
+
+.header {
+  padding: 50px 0;
+  background-image: url('./assets/macbook.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  font-size: 3rem;
+  .header-text {
+    display: inline-block;
+    padding: 100px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 780px) {
+  .header {
+    padding: 50px 20px;
+  }
 }
 
 .main-content {
@@ -57,23 +78,6 @@ export default {
 .main-content-title {
   display: block;
   background-color: #fff;
-}
-
-.header {
-  padding: 50px 0;
-  background-image: url('./assets/macbook.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  background-size: cover;
-
-  font-size: 3rem;
-  .header-text {
-    display: inline-block;
-    padding: 100px;
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
 }
 
 .sub-header-text {

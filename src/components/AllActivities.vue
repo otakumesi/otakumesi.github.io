@@ -93,4 +93,15 @@ export default {
     bottom: 0;
   }
 }
+
+@media (max-width: 780px) {
+  .activities .activity {
+    width: 100%;
+    font-size: 2.8rem;
+    .datetime {
+      padding: 15px;
+      font-size: 2rem;
+    }
+  }
+}
 </style>
