@@ -38,6 +38,7 @@
 <style>
 .icon-menu .circle-button {
   cursor: pointer;
+  margin: 10px;
 }
 
 .icon-menu .circle-button:first-child {
