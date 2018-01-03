@@ -15,6 +15,9 @@
       </div>
     </div>
     </main>
+    <footer class="footer">
+      © otakumesi 2016-2017
+    </footer>
   </div>
 </template>
 
@@ -59,6 +62,11 @@ export default {
 .header {
   padding: 50px 0;
   background-image: url('./assets/macbook.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+
   font-size: 3rem;
   .header-text {
     display: inline-block;
@@ -79,5 +87,11 @@ export default {
   display: block;
   width: 780px;
   margin: 0 auto;
+}
+
+.footer {
+  padding: 10px 0 10px;
+  background-color: #000;
+  color: #fff;
 }
 </style>
