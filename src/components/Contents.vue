@@ -11,7 +11,7 @@
       <CircleLinkButton bg-color="#2196F3" href="https://twitter.com/otakumesi">
         <Icon name="twitter" scale="4"></Icon>
       </CircleLinkButton>
-      <CircleLinkButton bg-color="#FFC107" href="http://otakumesi.io/post">
+      <CircleLinkButton bg-color="#FFC107" href="http://otakumesi.hatenablog.jp/">
         <Icon name="align-left" scale="4"></Icon>
       </CircleLinkButton>
     </IconMenu>
@@ -37,7 +37,10 @@ export default {
 
 <style>
 .contents {
+  background-color: #f9f9f9;
   text-align: center;
   width: 100%;
+  border-bottom: 1px dashed;
+  padding: 30px 0;
 }
 </style>

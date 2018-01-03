@@ -19,7 +19,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
 div {
   display: inline-block;
 }
@@ -34,17 +34,21 @@ button {
   vertical-align: middle;
   color: black;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
-}
+  cursor: pointer;
 
-button a {
-  color: black;
-}
+  &:hover {
+    opacity: 0.7;
+  }
 
-button a:hover {
-  color: black;
-}
+  a {
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
 
-button:active {
-  box-shadow: none;
+  &:active {
+    box-shadow: none;
+  }
 }
 </style>
