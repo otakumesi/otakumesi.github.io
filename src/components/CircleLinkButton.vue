@@ -1,6 +1,6 @@
 <template>
   <div class="circle-button">
-    <a :href="href" target="_blank">
+    <a :href="link" target="_blank">
       <button :style="buttonStyle"><slot></slot></button>
     </a>
   </div>
@@ -12,7 +12,7 @@
     props: ['bgColor', 'href'],
     data () {
       return {
-        href: this.href,
+        link: this.href,
         buttonStyle: { 'background-color': this.bgColor }
       }
     }

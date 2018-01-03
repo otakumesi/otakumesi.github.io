@@ -37,10 +37,8 @@ export default {
 
 <style>
 .contents {
-  background-color: #f9f9f9;
   text-align: center;
   width: 100%;
-  border-bottom: 1px dashed;
   padding: 30px 0;
 }
 </style>

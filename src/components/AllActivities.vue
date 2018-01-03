@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style lang="scss">
+.all-activities {
+  display: block;
+}
+
 .activities .activity {
   position: relative;
   width: 780px;

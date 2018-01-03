@@ -1,11 +1,19 @@
 <template>
   <div id="app">
-    <h1 class="header-text">Otakumesi::IO#index</h1>
-    <h2 class="sub-header-text">Contents</h2>
-    <Contents></Contents>
-    <h2 class="sub-header-text">MyActivities</h2>
+    <header class="header">
+      <h1 class="header-text">Otakumesi::IO#index</h1>
+    </header>
     <main class="main">
-      <AllActivities></AllActivities>
+    <div class="main-content">
+      <h2 class="sub-header-text">Contents</h2>
+      <Contents></Contents>
+    </div>
+    <div class="main-content">
+      <h2 class="sub-header-text">MyActivities</h2>
+      <div class="activity">
+        <AllActivities></AllActivities>
+      </div>
+    </div>
     </main>
   </div>
 </template>
@@ -13,6 +21,7 @@
 <script>
 import Contents from './components/Contents'
 import AllActivities from './components/AllActivities'
+import './assets/style.scss'
 
 export default {
   components: {
@@ -22,23 +31,41 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding-top: 30px;
   width: 100%;
 }
 
-.main {
+.main-content {
   margin: 0 auto;
+  padding: 30px 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  &:nth-child(odd) {
+    background-color: #fff;
+  }
 }
 
-.header-text {
+.main-content-title {
+  display: block;
+  background-color: #fff;
+}
+
+.header {
+  padding: 50px 0;
+  background-image: url('./assets/macbook.jpg');
   font-size: 3rem;
+  .header-text {
+    display: inline-block;
+    padding: 100px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .sub-header-text {
@@ -48,7 +75,9 @@ export default {
   font-size: 2.4rem;
 }
 
-.main {
-  background-color: #f9f9f9;
+.activity {
+  display: block;
+  width: 780px;
+  margin: 0 auto;
 }
 </style>
