@@ -48,6 +48,11 @@ export default {
   display: block;
 }
 
+.activities {
+  list-style-type: none;
+  padding: 0;
+}
+
 .activities .activity {
   position: relative;
   width: 780px;
@@ -55,7 +60,6 @@ export default {
   border: 1px solid #ccc;
   margin: 10px 0;
   text-align: left;
-  list-style-type: none;
   font-size: 1.4rem;
 
   .datetime {
