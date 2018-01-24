@@ -41,6 +41,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 100%;
 }
 
 .header {
@@ -60,8 +61,15 @@ export default {
 }
 
 @media (max-width: 780px) {
+  #app {
+    width: auto;
+  }
+
   .header {
     padding: 50px 20px;
+    position: fiexd;
+    width: 100%;
+    height: 100%;
   }
 }
 
