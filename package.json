@@ -9,7 +9,7 @@
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "deploy": "git subtree push -P dist origin master"
+    "deploy": "git push origin `git subtree split --prefix dist develop`:master --force"
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
