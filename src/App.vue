@@ -1,23 +1,27 @@
 <template>
-  <div id="app">
-    <header class="header">
-      <h1 class="header-text">Otakumesi::IO#index</h1>
-    </header>
-    <main class="main">
-    <div class="main-content">
-      <h2 class="sub-header-text">Contents</h2>
-      <Contents></Contents>
-    </div>
-    <div class="main-content">
-      <h2 class="sub-header-text">MyActivities</h2>
-      <div class="activity">
-        <AllActivities></AllActivities>
+  <div class="g-wrapper">
+    <div class="g-inner">
+      <div class="content" id="app">
+        <header class="header">
+          <h1 class="header-text">Otakumesi::IO#index</h1>
+        </header>
+        <main class="main">
+        <div class="main-content">
+          <h2 class="sub-header-text">Contents</h2>
+          <Contents></Contents>
+        </div>
+        <div class="main-content">
+          <h2 class="sub-header-text">MyActivities</h2>
+          <div class="activity-wrapper">
+            <AllActivities></AllActivities>
+          </div>
+        </div>
+        </main>
+        <footer class="footer">
+          © otakumesi 2016-2017
+        </footer>
       </div>
     </div>
-    </main>
-    <footer class="footer">
-      © otakumesi 2016-2017
-    </footer>
   </div>
 </template>
 
@@ -35,41 +39,37 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
+.g-wrapper {
+  width: 100%;
+}
+
+.g-inner {
+  margin: auto;
+  width: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.content {
   width: 100%;
 }
 
 .header {
-  padding: 50px 0;
+  margin: auto;
+  padding: 3rem 0;
   background-image: url('./assets/macbook.jpg');
   background-repeat: no-repeat;
-  background-attachment: fixed;
   -webkit-background-size: cover;
   background-size: cover;
-  font-size: 3rem;
   .header-text {
     display: inline-block;
-    padding: 100px;
-    border-radius: 50px;
+    font-size: 6vw;
+    padding: 3vw 3vh;
+    border-radius: 3rem;
     background-color: rgba(255, 255, 255, 0.8);
-  }
-}
-
-@media (max-width: 780px) {
-  #app {
-    width: auto;
-  }
-
-  .header {
-    padding: 50px 20px;
-    position: fiexd;
-    width: 100%;
-    height: 100%;
   }
 }
 
@@ -95,9 +95,9 @@ export default {
   font-size: 2.4rem;
 }
 
-.activity {
+.activity-wrapper {
   display: block;
-  width: 780px;
+  max-width: 780px;
   margin: 0 auto;
 }
 

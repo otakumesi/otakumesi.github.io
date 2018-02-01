@@ -1,6 +1,11 @@
-@import "~normalize.css/normalize.css";
+@import "reset.css";
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
 
 body {
-  font-size: 62.5%;
+  font-size: 1rem;
   box-sizing: border-box;
 }

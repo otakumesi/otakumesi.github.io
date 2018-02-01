@@ -51,11 +51,11 @@ export default {
 .activities {
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
 
 .activities .activity {
   position: relative;
-  width: 780px;
   background-color: #fff;
   border: 1px solid #ccc;
   margin: 10px 0;
@@ -76,8 +76,8 @@ export default {
     padding: 20px 10px;
     color: #000;
     display: block;
-    width: 100%;
     text-decoration: none;
+    z-index: 100;
   }
 
   .title {
@@ -88,7 +88,7 @@ export default {
   .fa-icon {
     position: absolute;
     vertical-align: middle;
-    color: #ccc;
+    color: rgba(100, 100, 100, 0.3);
     right: 20px;
     bottom: 0;
   }
@@ -96,7 +96,6 @@ export default {
 
 @media (max-width: 780px) {
   .activities .activity {
-    width: 100%;
     font-size: 2.8rem;
     .datetime {
       padding: 15px;
