@@ -60,12 +60,12 @@ export default {
   border: 1px solid #ccc;
   margin: 10px 0;
   text-align: left;
-  font-size: 1.4rem;
+  font-size: calc(15px + 0.2vw);
 
   .datetime {
     display: block;
     padding: 5px;
-    font-size: 1.2rem;
+    font-size: calc(20px + 0.2vw);
   }
 
   &:hover {
@@ -77,7 +77,6 @@ export default {
     color: #000;
     display: block;
     text-decoration: none;
-    z-index: 100;
   }
 
   .title {
@@ -91,16 +90,6 @@ export default {
     color: rgba(100, 100, 100, 0.3);
     right: 20px;
     bottom: 0;
-  }
-}
-
-@media (max-width: 780px) {
-  .activities .activity {
-    font-size: 2.8rem;
-    .datetime {
-      padding: 15px;
-      font-size: 2rem;
-    }
   }
 }
 </style>
