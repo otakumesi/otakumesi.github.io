@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Logo from '../atoms/logo';
+import Logo from '../atoms/Logo';
 
 const Header: React.SFC = () =>
   <header>
