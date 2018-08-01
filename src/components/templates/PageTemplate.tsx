@@ -1,6 +1,11 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 const ContentWrapper = styled.div`
   padding: 10px 15px;
 `
@@ -11,15 +16,15 @@ export interface Props {
   children: JSX.Element[] | JSX.Element
 }
 
-const PageTemplate = (props: Props) => {
+const PageTemplate = ({header, footer, children, ...props} : Props) => {
   return (
-    <React.Fragment>
-      {props.header}
+    <PageWrapper {...props}>
+      {header}
       <ContentWrapper>
-        {props.children}
+        {children}
       </ContentWrapper>
-      {props.footer}
-    </React.Fragment>
+      {footer}
+    </PageWrapper>
   )
 }
 
