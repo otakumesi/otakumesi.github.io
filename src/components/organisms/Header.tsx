@@ -7,11 +7,10 @@ const HeaderWrapepr = styled.header`
   padding: 10px 20px 15px;
 `
 
-export interface Props {}
-
-const Header = (props: Props) => {
+const Header = () => {
   return(
     <HeaderWrapepr>
+      brabra
     </HeaderWrapepr>
   )
 }

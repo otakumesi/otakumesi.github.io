@@ -1,16 +1,33 @@
 import * as React from 'react'
+import styled from 'styled-components'
 
 import PageTemplate from '../templates/PageTemplate'
 import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 import Timeline from '../organisms/Timeline'
+import ArticleStore from '../../types/ArticleStore'
 
-export interface Props {}
+const articles:ArticleStore[] = [
+  {
+    uniqueKey: "test",
+    media: "medium",
+    date: '2018/08/15',
+    title: 'brabra',
+    description: 'brabra',
+    url: 'https://yahoo.co.jp'
+  }
+]
 
-const TimelinePage = (props: Props) => {
+const PageWrapper = styled.div`
+  padding: 20px 10px;
+`
+
+const TimelinePage = () => {
   return (
     <PageTemplate header={<Header />} footer={<Footer />}>
-      <Timeline />
+      <PageWrapper>
+        <Timeline articles={articles} />
+      </PageWrapper>
     </PageTemplate>
   )
 }
