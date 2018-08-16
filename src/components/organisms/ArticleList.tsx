@@ -7,16 +7,16 @@ interface Props {
   articles: ArticleStore[]
 }
 
-const TimelineHeader = styled.dl`
+const ArticleListHeader = styled.dl`
   height: 25px;
   border-left: 2px dotted #000;
 `
 
-const Timeline = ({articles}: Props) => (
+const ArticleList = ({articles}: Props) => (
   <React.Fragment>
-    <TimelineHeader />
+    <ArticleListHeader />
     {articles.map(article => <Article key={article.uniqueKey} article={article} />)}
   </React.Fragment>
 )
 
-export default Timeline
+export default ArticleList

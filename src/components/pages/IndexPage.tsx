@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import PageTemplate from '../templates/PageTemplate'
 import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
-import Timeline from '../organisms/Timeline'
+import ArticleList from '../organisms/ArticleList'
 import ArticleStore from '../../types/ArticleStore'
 
 const articles:ArticleStore[] = [
@@ -22,14 +22,14 @@ const PageWrapper = styled.div`
   padding: 20px 10px;
 `
 
-const TimelinePage = () => {
+const IndexPage = () => {
   return (
     <PageTemplate header={<Header />} footer={<Footer />}>
       <PageWrapper>
-        <Timeline articles={articles} />
+        <ArticleList articles={articles} />
       </PageWrapper>
     </PageTemplate>
   )
 }
 
-export default TimelinePage
+export default IndexPage
