@@ -9,8 +9,8 @@ import ArticleStore from '../../types/ArticleStore'
 
 const articles:ArticleStore[] = [
   {
-    uniqueKey: "test",
-    media: "medium",
+    uniqueKey: 'test',
+    media: 'medium',
     date: '2018/08/15',
     title: 'brabra',
     description: 'brabra',

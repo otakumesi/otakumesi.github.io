@@ -7,16 +7,12 @@ interface Props {
   articles: ArticleStore[]
 }
 
-const ArticleListHeader = styled.dl`
-  height: 25px;
-  border-left: 2px dotted #000;
-`
+const ArticleListWrapper = styled.div``
 
 const ArticleList = ({articles}: Props) => (
-  <React.Fragment>
-    <ArticleListHeader />
+  <ArticleListWrapper>
     {articles.map(article => <Article key={article.uniqueKey} article={article} />)}
-  </React.Fragment>
+  </ArticleListWrapper>
 )
 
 export default ArticleList
