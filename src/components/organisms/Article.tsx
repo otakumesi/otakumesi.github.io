@@ -7,44 +7,88 @@ interface Props {
   article: ArticleStore
 }
 
-interface MediaLabelProps {
-  bgColor: string
+interface MediaColorProps {
+  mediaColor: string
 }
 
-const ArticleParagraph = styled.dl`
-  height: 50px;
+const ArticleLink = styled.a`
+  color: #000;
+  text-decoration: none;
+`
+
+const ArticleCard = styled.dl`
+  border-top: 3px solid ${(props: MediaColorProps) => props.mediaColor};
+  width: 250px;
   position: relative;
-  padding-left: 25px;
+  &:hover {
+    background-color: #f5f5f5;
+  }
+  &:active {
+    background-color: #e8e8e8;
+  }
+`
+
+const AricleHeader = styled.dt`
+  padding: 15px 15px 0;
+  border-left: 1px solid #ccc;
+`
+
+const ArticleTitle = styled.h1`
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-top: 34px;
+  margin-right: 15px;
+`
+
+const ArticleContent = styled.dd`
+  padding: 15px;
+  border-right: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+`
+
+const ArticleDescrition = styled.div`
+  font-size: 1.2em;
+`
+
+const ArticleFooter = styled.div`
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-right: 10px;
+  border-top: 1px dotted #ccc;
   display: flex;
-  align-items: center;
-  border-left: 2px solid #000;
+  justify-content: flex-end;
 `
 
-const AricleSymbolMark = styled.div`
-  position: absolute;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: #000;
-`
-
-const MediaLabel = styled.div`
-  padding: 5px 7px;
-  background-color: ${(props: MediaLabelProps) => props.bgColor};
+const MediaLabel = styled.span`
+  padding: 3px 5px;
+  background-color: ${(props: MediaColorProps) => props.mediaColor};
   color: #fff;
   font-weight: bold;
   border: 1px solid transparent;
   border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
 `
 
 const Article = ({article}: Props) => {
   return (
-    <ArticleParagraph>
-      <AricleSymbolMark/>
-    <MediaLabel bgColor={"red"}>{article.media}</MediaLabel>
-      {article.title}
-      {article.description}
-    </ArticleParagraph>
+    <ArticleLink href={article.url}>
+      <ArticleCard mediaColor={"red"}>
+        <AricleHeader>
+          <MediaLabel mediaColor={"red"}>{article.media}</MediaLabel>
+          <ArticleTitle>{article.title}</ArticleTitle>
+        </AricleHeader>
+        <ArticleContent>
+          <ArticleDescrition>
+            {article.description}
+          </ArticleDescrition>
+          <ArticleFooter>
+            {article.date}
+          </ArticleFooter>
+        </ArticleContent>
+      </ArticleCard>
+    </ArticleLink>
   )
 }
 

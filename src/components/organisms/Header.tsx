@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const HeaderWrapepr = styled.header`
   border-top: 5px solid #FD6A02;
-  height: 200px;
+  height: 120px;
   padding: 10px 20px 15px;
 `
 
