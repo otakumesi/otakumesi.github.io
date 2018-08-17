@@ -17,7 +17,7 @@ const ArticleLink = styled.a`
 `
 
 const ArticleCard = styled.dl`
-  border-top: 3px solid ${(props: MediaColorProps) => props.mediaColor};
+  border-left: 3px solid ${(props: MediaColorProps) => props.mediaColor};
   width: 250px;
   position: relative;
   &:hover {
@@ -30,7 +30,7 @@ const ArticleCard = styled.dl`
 
 const AricleHeader = styled.dt`
   padding: 15px 15px 0;
-  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 `
 
 const ArticleTitle = styled.h1`
@@ -74,9 +74,9 @@ const MediaLabel = styled.span`
 const Article = ({article}: Props) => {
   return (
     <ArticleLink href={article.url}>
-      <ArticleCard mediaColor={"red"}>
+      <ArticleCard mediaColor={article.color}>
         <AricleHeader>
-          <MediaLabel mediaColor={"red"}>{article.media}</MediaLabel>
+          <MediaLabel mediaColor={article.color}>{article.media}</MediaLabel>
           <ArticleTitle>{article.title}</ArticleTitle>
         </AricleHeader>
         <ArticleContent>

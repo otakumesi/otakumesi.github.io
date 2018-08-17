@@ -5,6 +5,7 @@ interface ArticleStore {
   title: string
   description: string
   url: string
+  color: string;
 }
 
 export default ArticleStore
