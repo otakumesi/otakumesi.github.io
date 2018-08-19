@@ -5,15 +5,17 @@
   "dependencies": {
     "@types/react": "^16.4.10",
     "@types/react-dom": "^16.0.6",
+    "date-fns": "^1.29.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "rss-parser": "^3.4.3",
     "styled-components": "^3.3.3",
     "typescript": "^3.0.1"
   },
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server --allowed-hosts otakumesi.dev.local.io"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.0",

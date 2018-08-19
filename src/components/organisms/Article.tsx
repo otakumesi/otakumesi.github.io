@@ -18,7 +18,8 @@ const ArticleLink = styled.a`
 
 const ArticleCard = styled.dl`
   border-left: 3px solid ${(props: MediaColorProps) => props.mediaColor};
-  width: 250px;
+  width: 310px;
+  margin: 0 10px 10px;
   position: relative;
   &:hover {
     background-color: #f5f5f5;
