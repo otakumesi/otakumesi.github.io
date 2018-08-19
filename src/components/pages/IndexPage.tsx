@@ -10,6 +10,7 @@ import ArticlesContext from '../../stores/articlesContext'
 import fetchArticles from '../../utils/fetchArticlesStrategy'
 
 const PageWrapper = styled.div`
+  max-width: 1280px;
   padding: 20px 10px;
 `
 
@@ -21,8 +22,8 @@ const initialState: State = { articles: [] }
 
 class IndexPage extends React.Component<{}, State> {
   readonly state: State = initialState
-
-  componentDidMount() {
+  constructor(props: any) {
+    super(props)
     this.getArticles()
   }
 

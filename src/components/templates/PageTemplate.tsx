@@ -7,7 +7,8 @@ const PageWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  padding: 10px 15px;
+  padding: 10px 0;
+  margin: 0 auto;
 `
 
 export interface Props {
