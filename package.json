@@ -20,7 +20,7 @@
     "build": "webpack --config webpack.config.dev.js",
     "deploy": "webpack --config webpack.config.prod.js",
     "watch": "webpack --watch",
-    "start:dev": "webpack-dev-server --allowed-hosts otakumesi.dev.local.io"
+    "start:dev": "webpack-dev-server --allowed-hosts otakumesi.dev.local.io --config webpack.config.dev.js"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.0",
