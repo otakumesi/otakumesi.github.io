@@ -5,7 +5,7 @@ import * as X2JS from 'x2js'
 const QIITA_ENDPOINT = 'https://qiita.com/api/v2/users/otakumesi/items'
 const SCRAPBOX_ENDPOINT = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D'https%3A%2F%2Fscrapbox.io%2Fapi%2Fpages%2Fotakumesi'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
 const HATENA_BLOG_ENDPOINT = 'http://otakumesi.hatenablog.jp/rss'
-// const GITHUB_ENDPOINT = 'https;//github.com/otakumesi'
+const GITHUB_ENDPOINT = 'https://api.github.com/users/otakumesi/repos?sort=updated'
 
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
@@ -25,7 +25,7 @@ const fetchArticles = async () => {
 }
 
 const fetchArticlesFromQiita = async () => {
-  const qiitaItems:QiitaApiItems | null = await fetch(QIITA_ENDPOINT)
+  const qiitaItems:QiitaApiItem[] = await fetch(QIITA_ENDPOINT)
     .then(items => {
       if(items.status === 200) {
         return items.json()
@@ -55,7 +55,7 @@ const fetchArticlesFromQiita = async () => {
 }
 
 const fetchArticlesFromScrapbox = async () => {
-  const scrapboxApi:YQLApi<ScrapboxApiPages> | null = await fetch(SCRAPBOX_ENDPOINT)
+  const scrapboxApi:YQLApi<ScrapboxApiPages> = await fetch(SCRAPBOX_ENDPOINT)
     .then(pages => {
       return pages.json()
     })
@@ -109,10 +109,35 @@ const fetchArticlesFromHatenaBlog = async () => {
   })
 }
 
+const fetchRepositoriesFromGithub = async () => {
+  const githubRepositories:GithubRepository[] = await fetch(GITHUB_ENDPOINT)
+    .then(repository => {
+      return repository.json()
+    })
+    .catch(err => {
+      return null
+    })
+
+  return githubRepositories
+    .filter(repo => repo.fork === false)
+    .map(repo => {
+        return {
+          uniqueKey: `github-${repo.name}`,
+          media: 'Github',
+          title: repo.name,
+          description: repo.description,
+          url: repo.html_url,
+          color: '#333',
+          date: format(new Date(repo.updated_at), DATETIME_FORMAT)
+        }
+    })
+}
+
 const FETCH_ARTICLES_STRATEGIES = [
   fetchArticlesFromQiita,
   fetchArticlesFromScrapbox,
-  fetchArticlesFromHatenaBlog
+  fetchArticlesFromHatenaBlog,
+  fetchRepositoriesFromGithub
 ]
 
 export default fetchArticles

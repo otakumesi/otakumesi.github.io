@@ -5,8 +5,6 @@ interface QiitaApiItem {
   updated_at: string
 }
 
-type QiitaApiItems = QiitaApiItem[]
-
 interface ScrapboxApiPage {
   title: string
   descriptions: string[]
@@ -17,16 +15,12 @@ interface ScrapboxApiPages {
   pages: ScrapboxApiPage[]
 }
 
-interface YQLResults<T> {
-  json: T
-}
-
-interface YQLQuery<T> {
-  results: YQLResults<T>
-}
-
 interface YQLApi<T> {
-  query: YQLQuery<T>
+  query: {
+    results: {
+      json: T
+    }
+  }
 }
 
 interface HatenaBlogItem {
@@ -36,17 +30,21 @@ interface HatenaBlogItem {
   pubDate: string
 }
 
-interface HatenaBlogFeed {
-  title: string
-  item: HatenaBlogItem[]
-}
-
-interface HatenaBlogChannel {
-  channel: HatenaBlogFeed
-}
-
 interface HatenaBlogRSS {
-  rss: HatenaBlogChannel
+  rss: {
+    channel: {
+      title: string
+      item: HatenaBlogItem[]
+    }
+  }
+}
+
+interface GithubRepository {
+  fork: boolean
+  name: string
+  html_url: string
+  description: string
+  updated_at: string
 }
 
 interface ArticleActionType {
