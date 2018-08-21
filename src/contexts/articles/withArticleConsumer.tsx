@@ -3,7 +3,7 @@ import ArticleContext from './context'
 
 const withArticleConsumer = <
   T extends ArticleState,
-  U = Pick<T, Exclude<keyof T, 'article' | 'dispatch'>>
+  U = Pick<T, Exclude<keyof T, 'articles' | 'dispatch'>>
   >(WrappedComponent: React.ComponentType<T>): React.ComponentType<U> =>
     class WithArticleConsumer extends React.Component<U> {
       render() {
