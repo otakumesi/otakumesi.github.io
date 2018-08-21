@@ -1,12 +1,8 @@
 const path = require('path')
 const SRC_PATH = path.resolve(__dirname, 'src/index.tsx')
-const DIST_DIR = path.resolve(__dirname, 'public')
 
 module.exports = {
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: DIST_DIR
-  },
   entry: {
     app: SRC_PATH,
     vendors: [

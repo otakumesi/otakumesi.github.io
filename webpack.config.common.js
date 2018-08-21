@@ -1,6 +1,6 @@
 const path = require('path')
 const SRC_PATH = path.resolve(__dirname, 'src/index.tsx')
-const DIST_DIR = path.resolve(__dirname, 'dist')
+const DIST_DIR = path.resolve(__dirname, 'public')
 
 module.exports = {
   entry: {
