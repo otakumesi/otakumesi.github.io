@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Article from '../organisms/Article'
 import withArticleConsumer from '../../contexts/articles/withArticleConsumer'
 
+// TODO: 各種スマホに合わせて画面対応、styled-componentsはループが使えるので繰り返さなくても良さげ
 const ArticleListWrapper = styled.div`
   margin: 0 auto;
   column-count: 4;
