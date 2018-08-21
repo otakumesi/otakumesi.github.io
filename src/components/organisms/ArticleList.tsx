@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Article from '../organisms/Article'
-import ArticlesContext from '../../stores/articlesContext'
+import withArticleConsumer from '../../contexts/articles/withArticleConsumer'
 
 const ArticleListWrapper = styled.div`
   margin: 0 auto;
@@ -19,14 +19,10 @@ const ArticleListWrapper = styled.div`
   }
 `
 
-const ArticleList = () => (
+const ArticleList = (state: ArticleState) => (
   <ArticleListWrapper>
-        <ArticlesContext.Consumer>
-          { state =>
-            state.articles.map(article => <Article key={article.uniqueKey} article={article} />)
-          }
-        </ArticlesContext.Consumer>
+    {state.articles.map(article => <Article key={article.uniqueKey} article={article} />)}
   </ArticleListWrapper>
 )
 
-export default ArticleList
+export default withArticleConsumer(ArticleList)

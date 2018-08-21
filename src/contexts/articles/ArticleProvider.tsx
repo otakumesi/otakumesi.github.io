@@ -1,19 +1,20 @@
 import * as React from 'react'
 
-import ArticlesContext, { reducer } from '../stores/articlesContext'
+import articleReducer from './reducer'
+import ArticleContext from './context'
 
 class ArticleProvider extends React.Component<{}, ArticleState> {
   readonly state: ArticleState = {
     articles: [],
     dispatch: (action: ArticleActionType) => {
-      this.setState((state: ArticleState) => reducer(state, action))
+      this.setState((state: ArticleState) => articleReducer(state, action))
     }
   }
 
   render() {
     const { props, state} = this
     return (
-      <ArticlesContext.Provider value={state}>{props.children}</ArticlesContext.Provider>
+      <ArticleContext.Provider value={state}>{props.children}</ArticleContext.Provider>
     )
   }
 }

@@ -5,7 +5,7 @@ import PageTemplate from '../templates/PageTemplate'
 import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 import ArticleList from '../organisms/ArticleList'
-import ArticleProvider from '../../contexts/ArticleProvider'
+import ArticleProvider from '../../contexts/articles/ArticleProvider'
 
 const PageWrapper = styled.div`
   max-width: 1280px;
