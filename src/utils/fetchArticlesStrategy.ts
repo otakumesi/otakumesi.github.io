@@ -4,7 +4,7 @@ import * as X2JS from 'x2js'
 
 const QIITA_ENDPOINT = 'https://qiita.com/api/v2/users/otakumesi/items'
 const SCRAPBOX_ENDPOINT = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D'https%3A%2F%2Fscrapbox.io%2Fapi%2Fpages%2Fotakumesi'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
-const HATENA_BLOG_ENDPOINT = 'http://otakumesi.hatenablog.jp/rss'
+const HATENA_BLOG_ENDPOINT = 'https://otakumesi.hatenablog.jp/rss'
 const GITHUB_ENDPOINT = 'https://api.github.com/users/otakumesi/repos?sort=updated'
 
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
