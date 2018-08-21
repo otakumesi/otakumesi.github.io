@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "deploy": "webpack --mode production",
     "watch": "webpack --watch",
     "start:dev": "webpack-dev-server --allowed-hosts otakumesi.dev.local.io"
   },
