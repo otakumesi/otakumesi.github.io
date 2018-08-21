@@ -22,8 +22,8 @@ const ArticleListWrapper = styled.div`
 const ArticleList = () => (
   <ArticleListWrapper>
         <ArticlesContext.Consumer>
-          { articles =>
-            articles.map(article => <Article key={article.uniqueKey} article={article} />)
+          { state =>
+            state.articles.map(article => <Article key={article.uniqueKey} article={article} />)
           }
         </ArticlesContext.Consumer>
   </ArticleListWrapper>

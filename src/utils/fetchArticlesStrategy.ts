@@ -1,13 +1,6 @@
 import * as format from 'date-fns/format'
 import { orderBy } from 'lodash-es'
 
-import ArticleStore from '../types/ArticleStore'
-import {
-  QiitaApiItems,
-  YQLApi,
-  ScrapboxApiPages
-} from '../types/ArticleApi'
-
 type MaybeArticleSet = (ArticleStore[] | null)[]
 
 const QIITA_ENDPOINT = 'https://qiita.com/api/v2/users/otakumesi/items'
