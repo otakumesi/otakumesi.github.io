@@ -9,7 +9,7 @@ import ArticleProvider from '../../contexts/articles/ArticleProvider'
 
 const PageWrapper = styled.div`
   max-width: 1280px;
-  padding: 20px 10px;
+  padding: 20px 5px;
 `
 
 // TODO: ソーシャル系のリンクをどこに置くかを検討
