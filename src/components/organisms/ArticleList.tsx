@@ -19,10 +19,12 @@ const ArticleListWrapper = styled.div`
   }
 `
 
-const ArticleList = (state: ArticleState) => (
-  <ArticleListWrapper>
-    {state.articles.map(article => <Article key={article.uniqueKey} article={article} />)}
-  </ArticleListWrapper>
-)
+const ArticleList = (state: ArticleState) => {
+  return (
+    <ArticleListWrapper>
+      {state.articles.map(article => <Article key={article.uniqueKey} article={article} />)}
+    </ArticleListWrapper>
+  )
+}
 
 export default withArticleConsumer(ArticleList)

@@ -1,13 +1,15 @@
 import * as format from 'date-fns/format'
 import { orderBy } from 'lodash-es'
-
-type MaybeArticleSet = (ArticleStore[] | null)[]
+import * as X2JS from 'x2js'
 
 const QIITA_ENDPOINT = 'https://qiita.com/api/v2/users/otakumesi/items'
 const SCRAPBOX_ENDPOINT = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D'https%3A%2F%2Fscrapbox.io%2Fapi%2Fpages%2Fotakumesi'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
-// const HATENA_BLOG = 'http://otakumesi.hatenablog.jp/rss'
+const HATENA_BLOG_ENDPOINT = 'http://otakumesi.hatenablog.jp/rss'
+// const GITHUB_ENDPOINT = 'https;//github.com/otakumesi'
 
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
+
+type MaybeArticleSet = (ArticleStore[] | null)[]
 
 const fetchArticles = async () => {
   const articles = await Promise.all(FETCH_ARTICLES_STRATEGIES.map(strategy => strategy()))
@@ -23,9 +25,13 @@ const fetchArticles = async () => {
 }
 
 const fetchArticlesFromQiita = async () => {
-  const qiitaItems:QiitaApiItems = await fetch(QIITA_ENDPOINT)
+  const qiitaItems:QiitaApiItems | null = await fetch(QIITA_ENDPOINT)
     .then(items => {
-      return items.json()
+      if(items.status === 200) {
+        return items.json()
+      } else {
+        return null
+      }
     })
     .catch(err => {
       return null
@@ -38,7 +44,7 @@ const fetchArticlesFromQiita = async () => {
   return qiitaItems.map(item => {
     return {
       uniqueKey: `qiita-${item.title}`,
-      media: 'qiita',
+      media: 'Qiita',
       title: item.title,
       description: item.body.slice(0, 29),
       url: item.url,
@@ -49,12 +55,11 @@ const fetchArticlesFromQiita = async () => {
 }
 
 const fetchArticlesFromScrapbox = async () => {
-  const scrapboxApi:YQLApi<ScrapboxApiPages> = await fetch(SCRAPBOX_ENDPOINT)
+  const scrapboxApi:YQLApi<ScrapboxApiPages> | null = await fetch(SCRAPBOX_ENDPOINT)
     .then(pages => {
       return pages.json()
     })
     .catch(err => {
-      console.log(err)
       return null
     })
 
@@ -62,8 +67,7 @@ const fetchArticlesFromScrapbox = async () => {
     return null
   }
 
-  console.log(scrapboxApi)
-  return scrapboxApi.query.results.json.pages.map((item):ArticleStore => {
+  return scrapboxApi.query.results.json.pages.map(item => {
     return {
       uniqueKey: `scrapbox-${item.title}`,
       media: 'scrapbox',
@@ -76,13 +80,39 @@ const fetchArticlesFromScrapbox = async () => {
   })
 }
 
-// const fetchArticlesFromHatenaBlog = async () => {
-// }
+const fetchArticlesFromHatenaBlog = async () => {
+  const x2js = new X2JS()
+  const hatenaBlogRSSText = await fetch(HATENA_BLOG_ENDPOINT)
+    .then(items => {
+      return items.text()
+    })
+    .catch(err => {
+      return null
+    })
+
+  if(!hatenaBlogRSSText) {
+    return null
+  }
+
+  const hatenaBlogRSS:HatenaBlogRSS = x2js.xml2js(hatenaBlogRSSText)
+
+  return hatenaBlogRSS.rss.channel.item.map(item => {
+    return {
+      uniqueKey: `hatena-blog-${item.title}`,
+      media: 'HatenaBlog',
+      title: item.title,
+      description: item.description.slice(0, 30),
+      url: item.link,
+      color: '#008fde',
+      date: format(new Date(item.pubDate), DATETIME_FORMAT)
+    }
+  })
+}
 
 const FETCH_ARTICLES_STRATEGIES = [
   fetchArticlesFromQiita,
   fetchArticlesFromScrapbox,
-  //  fetchArticlesFromHatenaBlog
+  fetchArticlesFromHatenaBlog
 ]
 
 export default fetchArticles

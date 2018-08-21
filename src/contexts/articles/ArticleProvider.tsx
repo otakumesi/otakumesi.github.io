@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import articleReducer from './reducer'
 import ArticleContext from './context'
+import { requestArticles } from '../../contexts/articles/actions'
 
 class ArticleProvider extends React.Component<{}, ArticleState> {
   readonly state: ArticleState = {
@@ -11,8 +12,15 @@ class ArticleProvider extends React.Component<{}, ArticleState> {
     }
   }
 
+  componentDidMount() {
+    if(this.state.dispatch) {
+      requestArticles(this.state.dispatch)
+    }
+  }
+
   render() {
-    const { props, state} = this
+    const { props, state } = this
+
     return (
       <ArticleContext.Provider value={state}>{props.children}</ArticleContext.Provider>
     )

@@ -29,6 +29,26 @@ interface YQLApi<T> {
   query: YQLQuery<T>
 }
 
+interface HatenaBlogItem {
+  title: string
+  link: string
+  description: string
+  pubDate: string
+}
+
+interface HatenaBlogFeed {
+  title: string
+  item: HatenaBlogItem[]
+}
+
+interface HatenaBlogChannel {
+  channel: HatenaBlogFeed
+}
+
+interface HatenaBlogRSS {
+  rss: HatenaBlogChannel
+}
+
 interface ArticleActionType {
   type: string
   payload: { articles: ArticleStore[] } | undefined
