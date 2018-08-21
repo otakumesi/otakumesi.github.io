@@ -12,14 +12,8 @@ interface ScrapboxApiPage {
 }
 
 interface ScrapboxApiPages {
-  pages: ScrapboxApiPage[]
-}
-
-interface YQLApi<T> {
-  query: {
-    results: {
-      json: T
-    }
+  json: {
+    pages: ScrapboxApiPage[]
   }
 }
 
@@ -30,12 +24,13 @@ interface HatenaBlogItem {
   pubDate: string
 }
 
-interface HatenaBlogRSS {
-  rss: {
-    channel: {
-      title: string
-      item: HatenaBlogItem[]
-    }
+interface HatenaBlogFeed {
+  item: HatenaBlogItem[]
+}
+
+interface YQLApi<T> {
+  query: {
+    results: T
   }
 }
 
@@ -63,6 +58,8 @@ interface ArticleStore {
   url: string
   color: string;
 }
+
+type MaybeArticleSet = (ArticleStore[] | null)[]
 
 interface ArticleState {
   articles: ArticleStore[]
