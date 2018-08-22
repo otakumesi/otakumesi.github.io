@@ -12,6 +12,8 @@ const fetchRepositoriesFromGithub = async () => {
       Promise.resolve(null)
     })
 
+  if (!githubRepositories) return null
+
   return githubRepositories
     .filter(repo => repo.fork === false)
     .map(repo => {
