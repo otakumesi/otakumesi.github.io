@@ -12,16 +12,14 @@ const FETCH_ARTICLES_STRATEGIES = [
 ]
 
 const fetchArticles = async () => {
-  const articles = await Promise.all(FETCH_ARTICLES_STRATEGIES.map(strategy => strategy()))
-    .then((articlesSet:MaybeArticleSet) => {
-      return articlesSet.reduce((res, item) => {
+  const articlesSet = await Promise.all(FETCH_ARTICLES_STRATEGIES.map(strategy => strategy()))
+  const articles = articlesSet.reduce((res, item) => {
         if (res && item) {
          return res.concat(item)
         }
         return res
       }, [])
-    })
-  return orderBy(articles as ArticleStore[], 'date', 'desc')
+  return orderBy(articles, 'date', 'desc')
 }
 
 export default fetchArticles

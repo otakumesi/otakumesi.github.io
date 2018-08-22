@@ -59,8 +59,6 @@ interface ArticleStore {
   color: string;
 }
 
-type MaybeArticleSet = (ArticleStore[] | null)[]
-
 interface ArticleState {
   articles: ArticleStore[]
   dispatch: ArticleActionDispatcher | null | undefined
