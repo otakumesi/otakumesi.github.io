@@ -3,19 +3,21 @@ import styled from 'styled-components'
 import Article from '../organisms/Article'
 import withArticleConsumer from '../../contexts/articles/withArticleConsumer'
 
-// TODO: 各種スマホに合わせて画面対応、styled-componentsはループが使えるので繰り返さなくても良さげ
 const ArticleListWrapper = styled.div`
   margin: 0 auto;
+  width: 100%;
   column-count: 4;
-  @media (max-width: 960px) {
+  column-gap: 25px;
+
+  @media screen and (max-width: 1430px) {
     column-count: 3;
   }
 
-  @media (max-width: 640px) {
+  @media screen and (max-width: 1085px) {
     column-count: 2;
   }
 
-  @media (max-width: 320px) {
+  @media screen and (max-width: 740px) {
     column-count: 1;
   }
 `

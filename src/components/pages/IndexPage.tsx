@@ -8,8 +8,9 @@ import ArticleList from '../organisms/ArticleList'
 import ArticleProvider from '../../contexts/articles/ArticleProvider'
 
 const PageWrapper = styled.div`
-  max-width: 1280px;
-  padding: 20px 5px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 25px;
 `
 
 // TODO: ソーシャル系のリンクをどこに置くかを検討

@@ -13,7 +13,8 @@ interface MediaColorProps {
 const ArticleLink = styled.a`
   color: #000;
   text-decoration: none;
-  margin: 15px 5px;
+  display: block;
+  margin-bottom: 25px;
 `
 
 const ArticleCard = styled.dl`
@@ -21,7 +22,7 @@ const ArticleCard = styled.dl`
   border-left: 3px solid ${(props: MediaColorProps) => props.mediaColor};
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  width: 310px;
+  min-width: 270px;
   position: relative;
   &:hover {
     background-color: #f5f5f5;
@@ -32,7 +33,7 @@ const ArticleCard = styled.dl`
 `
 
 const AricleHeader = styled.dt`
-  padding: 15px 15px 0;
+  padding: 20px 20px 0;
   border-top: 1px solid #ccc;
 `
 
@@ -44,7 +45,7 @@ const ArticleTitle = styled.h1`
 `
 
 const ArticleContent = styled.dd`
-  padding: 15px;
+  padding: 20px;
 `
 
 const ArticleDescrition = styled.div`
@@ -52,8 +53,8 @@ const ArticleDescrition = styled.div`
 `
 
 const ArticleFooter = styled.div`
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
   margin-right: 10px;
   border-top: 1px dotted #ccc;
   display: flex;

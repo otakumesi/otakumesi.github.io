@@ -7,6 +7,7 @@ const PageWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
+  width: 100%;
   padding: 10px 0;
   margin: 0 auto;
 `
