@@ -52,7 +52,6 @@ object-assign
   max-height: 120px;
   width: 100%;
 `,f=a["a"].div`
-  max-width: 1280px;
   margin: 0 auto;
   padding: 10px 20px 15px;
 `,d=a["a"].div`
@@ -72,7 +71,7 @@ object-assign
   color: #000;
   text-decoration: none;
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 `,g=a["a"].dl`
   break-inside: avoid;
   border-left: 3px solid ${e=>e.mediaColor};
@@ -136,4 +135,8 @@ object-assign
   width: 100%;
   margin: 0 auto;
   padding: 20px 25px;
+
+  @media screen and (max-width: 740px) {
+    padding: 20px 10px;
+  }
 `;var Fr=class extends r.Component{render(){return r.createElement(c,{header:r.createElement(h,null),footer:r.createElement(v,null)},r.createElement(Ir,null,r.createElement(Dr,null,r.createElement(P,null))))}};class Rr extends r.Component{render(){return r.createElement(Fr,null)}}const Ur=document.getElementById("root");null!==Ur&&o.render(r.createElement(Rr,null),Ur)}]);
