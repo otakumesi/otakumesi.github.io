@@ -5,14 +5,15 @@ const GITHUB_ENDPOINT = 'https://api.github.com/users/otakumesi/repos?sort=updat
 
 const fetchRepositoriesFromGithub = async () => {
   const githubRepositories:GithubRepository[] = await fetch(GITHUB_ENDPOINT)
-    .then(repository => {
-      return repository.json()
+    .then(repositories => {
+      if(repositories.status !== 200) {
+        Promise.resolve(null)
+      }
+      return repositories.json()
     })
     .catch(err => {
       Promise.resolve(null)
     })
-
-  if (!githubRepositories) return null
 
   return githubRepositories
     .filter(repo => repo.fork === false)

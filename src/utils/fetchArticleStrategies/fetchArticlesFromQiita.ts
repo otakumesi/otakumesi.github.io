@@ -6,11 +6,10 @@ const QIITA_ENDPOINT = 'https://qiita.com/api/v2/users/otakumesi/items'
 const fetchArticlesFromQiita = async () => {
   const qiitaItems:QiitaApiItem[] = await fetch(QIITA_ENDPOINT)
     .then(items => {
-      if(items.status === 200) {
-        return items.json()
-      } else {
-        return null
+      if(items.status !== 200) {
+        Promise.resolve(null)
       }
+      return items.json()
     })
     .catch(err => {
       Promise.resolve(null)
