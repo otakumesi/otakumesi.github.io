@@ -14,7 +14,7 @@ const ArticleLink = styled.a`
   color: #000;
   text-decoration: none;
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 `
 
 const ArticleCard = styled.dl`

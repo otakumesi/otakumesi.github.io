@@ -11,6 +11,10 @@ const PageWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 20px 25px;
+
+  @media screen and (max-width: 740px) {
+    padding: 20px 10px;
+  }
 `
 
 // TODO: ソーシャル系のリンクをどこに置くかを検討

@@ -9,7 +9,6 @@ const HeaderWrapepr = styled.header`
 `
 
 const HeaderInner = styled.div`
-  max-width: 1280px;
   margin: 0 auto;
   padding: 10px 20px 15px;
 `
