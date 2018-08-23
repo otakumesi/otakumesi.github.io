@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTemplate shows Header, Footer, and children 1`] = `
+<div
+  className="sc-bdVaJa bPGLpq"
+>
+  Header
+  <div
+    className="sc-bwzfXH gPgjRf"
+  >
+    Content
+  </div>
+  Footer
+</div>
+`;

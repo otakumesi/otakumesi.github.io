@@ -19,10 +19,21 @@
     "build": "webpack --config webpack.config.dev.js",
     "deploy": "webpack --config webpack.config.prod.js",
     "watch": "webpack --watch",
-    "start:dev": "webpack-dev-server --allowed-hosts otakumesi.dev.local.io --config webpack.config.dev.js"
+    "start:dev": "webpack-dev-server --allowed-hosts otakumesi.dev.local.io --config webpack.config.dev.js",
+    "test": "jest",
+    "test:watch": "npx jest watch"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.13",
+    "@types/jest": "^23.3.1",
+    "@types/react-test-renderer": "^16.0.2",
     "awesome-typescript-loader": "^5.2.0",
+    "enzyme": "^3.4.4",
+    "enzyme-adapter-react-16": "^1.2.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.5.0",
+    "react-test-renderer": "^16.4.2",
+    "ts-jest": "^23.1.4",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
