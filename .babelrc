@@ -2,9 +2,14 @@
   "presets": [
     ["@babel/env", {
       "targets": {
-        "browsers": ["last 2 versions"]
+        "browsers": [
+          "Chrome >= 41",
+          "ie >= 11",
+          "last 2 versions"
+        ]
       },
-      "modules": false
+      "modules": false,
+      "useBuiltIns": "usage"
     }]
   ]
 }
