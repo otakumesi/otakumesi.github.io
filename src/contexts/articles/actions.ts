@@ -1,4 +1,4 @@
-import fetchArticles from '../../utils/fetchArticlesStrategy'
+import fetchArticles from '../../utils/fetchArticlesStrategies'
 import { ARTICLE_RECEIVE } from './constants'
 
 const requestArticles = (dispatch: ArticleActionDispatcher) => {

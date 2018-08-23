@@ -9,15 +9,17 @@ const fetchArticlesFromScrapbox = async () => {
       return pages.json()
     })
     .catch(err => {
-      Promise.resolve(null)
+      return null
     })
+
+  if (!scrapboxApi) return null
 
   return scrapboxApi.query.results.json.pages.map(item => {
     return {
       uniqueKey: `scrapbox-${item.title}`,
       media: 'scrapbox',
       title: item.title,
-      description: item.descriptions.join(' ').slice(0, 30),
+      description: item.descriptions.join(' ').slice(0, 70),
       url: `https://scrapbox.io/otakumesi/${item.title}`,
       color: '#39ac86',
       date: format(new Date(item.updated * 1000), DATETIME_FORMAT)

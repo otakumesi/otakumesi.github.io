@@ -7,13 +7,15 @@ const fetchRepositoriesFromGithub = async () => {
   const githubRepositories:GithubRepository[] = await fetch(GITHUB_ENDPOINT)
     .then(repositories => {
       if(repositories.status !== 200) {
-        Promise.resolve(null)
+        return null
       }
       return repositories.json()
     })
     .catch(err => {
-      Promise.resolve(null)
+      return null
     })
+
+  if (!githubRepositories) return null
 
   return githubRepositories
     .filter(repo => repo.fork === false)

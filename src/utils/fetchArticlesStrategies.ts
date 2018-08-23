@@ -1,8 +1,8 @@
 import { orderBy } from 'lodash-es'
-import fetchArticlesFromQiita from './fetchArticleStrategies/fetchArticlesFromQiita'
-import fetchArticlesFromScrapbox from './fetchArticleStrategies/fetchArticlesFromScrapbox'
-import fetchArticlesFromHatenaBlog from './fetchArticleStrategies/fetchArticlesFromHatenaBlog'
-import fetchRepositoriesFromGithub from './fetchArticleStrategies/fetchRepositoriesFromGithub'
+import fetchArticlesFromQiita from './fetchArticlesStrategies/fetchArticlesFromQiita'
+import fetchArticlesFromScrapbox from './fetchArticlesStrategies/fetchArticlesFromScrapbox'
+import fetchArticlesFromHatenaBlog from './fetchArticlesStrategies/fetchArticlesFromHatenaBlog'
+import fetchRepositoriesFromGithub from './fetchArticlesStrategies/fetchRepositoriesFromGithub'
 
 const FETCH_ARTICLES_STRATEGIES = [
   fetchArticlesFromQiita,

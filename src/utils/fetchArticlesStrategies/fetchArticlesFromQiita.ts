@@ -7,20 +7,22 @@ const fetchArticlesFromQiita = async () => {
   const qiitaItems:QiitaApiItem[] = await fetch(QIITA_ENDPOINT)
     .then(items => {
       if(items.status !== 200) {
-        Promise.resolve(null)
+        return null
       }
       return items.json()
     })
     .catch(err => {
-      Promise.resolve(null)
+      return null
     })
+
+  if (!qiitaItems) return null
 
   return qiitaItems.map(item => {
     return {
       uniqueKey: `qiita-${item.title}`,
       media: 'Qiita',
       title: item.title,
-      description: item.body.slice(0, 29),
+      description: item.body.slice(0, 70),
       url: item.url,
       color: '#4cb10d',
       date: format(item.updated_at, DATETIME_FORMAT)
