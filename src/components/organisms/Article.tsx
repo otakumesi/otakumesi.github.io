@@ -41,7 +41,6 @@ const ArticleTitle = styled.h1`
   font-size: 1.4em;
   font-weight: bold;
   margin-top: 34px;
-  margin-right: 15px;
 `
 
 const ArticleContent = styled.div`

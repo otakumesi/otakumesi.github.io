@@ -1,7 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { isEmpty, times } from 'lodash-es'
+
 import Article from '../organisms/Article'
+import DuumyArticle from './DummyArticle'
 import withArticleConsumer from '../../contexts/articles/withArticleConsumer'
+
+const DummyArticleNumber = 25
 
 const ArticleListWrapper = styled.div`
   margin: 0 auto;
@@ -22,10 +27,15 @@ const ArticleListWrapper = styled.div`
   }
 `
 
+const createDummyArticles = () => (times(DummyArticleNumber, () => <DuumyArticle />))
+
+const createArticles = (articles:ArticleStore[]) => (articles.map(article => <Article key={article.uniqueKey} article={article} />))
+
 const ArticleList = (state: ArticleState) => {
+  const Items = isEmpty(state.articles) ? createDummyArticles() : createArticles(state.articles)
   return (
     <ArticleListWrapper>
-      {state.articles.map(article => <Article key={article.uniqueKey} article={article} />)}
+      {Items}
     </ArticleListWrapper>
   )
 }
