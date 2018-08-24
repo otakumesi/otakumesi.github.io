@@ -19,8 +19,9 @@ const BrandSpace = styled.div`
   align-items: center;
 `
 
-const Logo = styled.div`
+const Logo = styled.a`
   font-size: 2.4em;
+  text-decoration: none;
 `
 
 const Header = () => {
@@ -28,7 +29,7 @@ const Header = () => {
     <HeaderWrapepr>
       <HeaderInner>
         <BrandSpace>
-          <Logo>Otakumesi#IO</Logo>
+          <Logo href="/">otakumesi#IO</Logo>
         </BrandSpace>
       </HeaderInner>
     </HeaderWrapepr>
