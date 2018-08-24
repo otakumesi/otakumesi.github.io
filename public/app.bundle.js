@@ -72,7 +72,7 @@ object-assign
   text-decoration: none;
   display: block;
   margin-bottom: 20px;
-`,g=a["a"].dl`
+`,g=a["a"].article`
   break-inside: avoid;
   border-left: 3px solid ${e=>e.mediaColor};
   border-right: 1px solid #ccc;
@@ -85,7 +85,7 @@ object-assign
   &:active {
     background-color: #e8e8e8;
   }
-`,b=a["a"].dt`
+`,b=a["a"].header`
   padding: 20px 20px 0;
   border-top: 1px solid #ccc;
 `,w=a["a"].h1`
@@ -93,11 +93,13 @@ object-assign
   font-weight: bold;
   margin-top: 34px;
   margin-right: 15px;
-`,x=a["a"].dd`
+`,x=a["a"].div`
   padding: 20px;
-`,k=a["a"].div`
+`,k=a["a"].p`
   font-size: 1.1em;
-`,C=a["a"].div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+`,C=a["a"].footer`
   margin-top: 20px;
   padding-top: 20px;
   margin-right: 10px;
@@ -114,7 +116,7 @@ object-assign
   position: absolute;
   right: 15px;
   top: 10px;
-`;var T=({article:e})=>r.createElement(y,{href:e.url},r.createElement(g,{mediaColor:e.color},r.createElement(b,null,r.createElement(_,{mediaColor:e.color},e.media),r.createElement(w,null,e.title)),r.createElement(x,null,r.createElement(k,null,e.description),r.createElement(C,null,e.date))));var E=r.createContext({articles:[],dispatch:null});const S=a["a"].div`
+`;var T=({article:e})=>r.createElement(y,{href:e.url},r.createElement(g,{mediaColor:e.color},r.createElement(b,null,r.createElement(_,{mediaColor:e.color},e.media),r.createElement(w,null,e.title)),r.createElement(x,null,r.createElement(k,null,e.description),r.createElement(C,null,r.createElement("time",null,e.date)))));var E=r.createContext({articles:[],dispatch:null});const S=a["a"].div`
   margin: 0 auto;
   width: 100%;
   column-count: 4;
