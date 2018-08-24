@@ -17,7 +17,7 @@ const ArticleLink = styled.a`
   margin-bottom: 20px;
 `
 
-const ArticleCard = styled.dl`
+const ArticleCard = styled.article`
   break-inside: avoid;
   border-left: 3px solid ${(props: MediaColorProps) => props.mediaColor};
   border-right: 1px solid #ccc;
@@ -32,7 +32,7 @@ const ArticleCard = styled.dl`
   }
 `
 
-const AricleHeader = styled.dt`
+const AricleHeader = styled.header`
   padding: 20px 20px 0;
   border-top: 1px solid #ccc;
 `
@@ -44,15 +44,17 @@ const ArticleTitle = styled.h1`
   margin-right: 15px;
 `
 
-const ArticleContent = styled.dd`
+const ArticleContent = styled.div`
   padding: 20px;
 `
 
-const ArticleDescrition = styled.div`
+const ArticleDescription = styled.p`
   font-size: 1.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
-const ArticleFooter = styled.div`
+const ArticleFooter = styled.footer`
   margin-top: 20px;
   padding-top: 20px;
   margin-right: 10px;
@@ -82,11 +84,11 @@ const Article = ({article}: Props) => {
           <ArticleTitle>{article.title}</ArticleTitle>
         </AricleHeader>
         <ArticleContent>
-          <ArticleDescrition>
+          <ArticleDescription>
             {article.description}
-          </ArticleDescrition>
+          </ArticleDescription>
           <ArticleFooter>
-            {article.date}
+            <time>{article.date}</time>
           </ArticleFooter>
         </ArticleContent>
       </ArticleCard>
