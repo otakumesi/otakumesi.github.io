@@ -1,4 +1,6 @@
 import * as format from 'date-fns/format'
+import * as Sentry from '@sentry/browser'
+
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
 const SCRAPBOX_ENDPOINT = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D'https%3A%2F%2Fscrapbox.io%2Fapi%2Fpages%2Fotakumesi'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
@@ -9,6 +11,7 @@ const fetchArticlesFromScrapbox = async () => {
       return pages.json()
     })
     .catch(err => {
+      Sentry.captureException(err)
       return null
     })
 

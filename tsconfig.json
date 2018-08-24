@@ -1,4 +1,5 @@
 {
+  "extends": "./node_modules/@sentry/typescript/tsconfig.json",
   "compilerOptions": {
     "typeRoots": [
       "node_modules/@types",
@@ -9,7 +10,6 @@
     "target": "es2015",
     "lib": ["es6", "dom"],
     "sourceMap": true,
-    "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,

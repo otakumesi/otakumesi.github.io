@@ -27,7 +27,7 @@ const ArticleListWrapper = styled.div`
   }
 `
 
-const createDummyArticles = () => (times(DummyArticleNumber, () => <DuumyArticle />))
+const createDummyArticles = () => (times(DummyArticleNumber, (n) => <DuumyArticle key={n} />))
 
 const createArticles = (articles:ArticleStore[]) => (articles.map(article => <Article key={article.uniqueKey} article={article} />))
 

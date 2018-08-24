@@ -10,9 +10,7 @@ const FooterWrapepr = styled.header`
   justify-content: center;
 `
 
-export interface Props {}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return(
     <FooterWrapepr>
       © otakumesi

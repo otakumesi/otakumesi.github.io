@@ -1,4 +1,6 @@
 import * as format from 'date-fns/format'
+import * as Sentry from '@sentry/browser'
+
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
 const GITHUB_ENDPOINT = 'https://api.github.com/users/otakumesi/repos?sort=updated'
@@ -12,6 +14,7 @@ const fetchRepositoriesFromGithub = async () => {
       return repositories.json()
     })
     .catch(err => {
+      Sentry.captureException(err)
       return null
     })
 

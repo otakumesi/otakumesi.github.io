@@ -1,4 +1,6 @@
 import * as format from 'date-fns/format'
+import * as Sentry from '@sentry/browser'
+
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
 const QIITA_ENDPOINT = 'https://qiita.com/api/v2/users/otakumesi/items'
@@ -12,6 +14,7 @@ const fetchArticlesFromQiita = async () => {
       return items.json()
     })
     .catch(err => {
+      Sentry.captureException(err)
       return null
     })
 
