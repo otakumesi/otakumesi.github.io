@@ -1,15 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-interface Props {
-  key: string
-  article: ArticleStore
-}
-
-interface MediaColorProps {
-  mediaColor: string
-}
-
 const ArticleLink = styled.a`
   color: #000;
   text-decoration: none;
@@ -74,7 +65,7 @@ const MediaLabel = styled.span`
   top: 10px;
 `
 
-const Article = ({article}: Props) => {
+const Article:React.SFC<ArticleListProps> = ({article}) => {
   return (
     <ArticleLink href={article.url}>
       <ArticleCard mediaColor={article.color}>

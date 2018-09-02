@@ -61,6 +61,6 @@ interface ArticleStore {
 
 interface ArticleState {
   articles: ArticleStore[]
-  dispatch: ArticleActionDispatcher | null | undefined
+  dispatch?: ArticleActionDispatcher
 }
 

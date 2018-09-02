@@ -31,8 +31,8 @@ const createDummyArticles = () => (times(DummyArticleNumber, (n) => <DuumyArticl
 
 const createArticles = (articles:ArticleStore[]) => (articles.map(article => <Article key={article.uniqueKey} article={article} />))
 
-const ArticleList = (state: ArticleState) => {
-  const Items = isEmpty(state.articles) ? createDummyArticles() : createArticles(state.articles)
+const ArticleList:React.SFC<ArticleState> = (store) => {
+  const Items = isEmpty(store.articles) ? createDummyArticles() : createArticles(store.articles)
   return (
     <ArticleListWrapper>
       {Items}

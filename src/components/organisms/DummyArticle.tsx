@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-
 const ArticleCard = styled.article`
   break-inside: avoid;
   border-left: 3px solid #8e8e8e;
