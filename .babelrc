@@ -8,8 +8,7 @@
           "ie >= 11",
         ]
       },
-      "modules": false,
-      "useBuiltIns": "usage"
+      "modules": false
     }]
   ]
 }

@@ -4,7 +4,7 @@ const DIST_DIR = path.resolve(__dirname, 'public')
 
 module.exports = {
   entry: {
-    app: SRC_PATH,
+    app: ["@babel/polyfill", SRC_PATH],
     vendors: [
       'react',
       'react-dom'
