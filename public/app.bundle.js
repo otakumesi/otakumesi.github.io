@@ -67,6 +67,10 @@ var r=function(){},c={},a={},o={mark:r,measure:r};try{"undefined"!=typeof window
 `,b=l["a"].a`
   font-size: 2.4em;
   text-decoration: none;
+
+  @media screen and (max-width: 740px) {
+    font-size: 1.6em;
+  }
 `,g=l["a"].div`
   height: 95px;
   display: flex;

@@ -24,6 +24,10 @@ const BrandSpace = styled.div`
 const Logo = styled.a`
   font-size: 2.4em;
   text-decoration: none;
+
+  @media screen and (max-width: 740px) {
+    font-size: 1.6em;
+  }
 `
 
 const ContentSpace = styled.div`
