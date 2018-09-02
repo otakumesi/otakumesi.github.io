@@ -64,3 +64,17 @@ interface ArticleState {
   dispatch?: ArticleActionDispatcher
 }
 
+interface ArticleListProps {
+  key: string
+  article: ArticleStore
+}
+
+interface MediaColorProps {
+  mediaColor: string
+}
+
+interface SocialIconLinkProps {
+  bgColor?: string
+  fontColor: string
+  url: string
+}
