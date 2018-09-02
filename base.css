@@ -1,3 +1,8 @@
 *, *:before, *:after {
   box-sizing: border-box;
+  color: #3a3a3a;
+}
+
+svg.svg-inline--fa path {
+  fill: #fff
 }
