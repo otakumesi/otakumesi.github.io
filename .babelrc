@@ -1,15 +1,18 @@
 {
   "presets": [
-    ["@babel/env", {
-      "targets": {
-        "browsers": [
-          "> 0.25%",
-          "Chrome >= 41",
-          "ie >= 11",
-        ]
-      },
-      "modules": false,
-      "useBuiltIns": "entry"
-    }]
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "targets": {
+          "browsers": [
+            "> 0.25%",
+            "Chrome >= 41",
+            "ie >= 11"
+          ]
+        },
+        "modules": false
+      }
+    ]
   ]
 }
