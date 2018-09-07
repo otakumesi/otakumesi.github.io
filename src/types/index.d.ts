@@ -17,15 +17,16 @@ interface ScrapboxApiPages {
   }
 }
 
-interface HatenaBlogItem {
+interface RSSItem {
   title: string
   link: string
-  description: string
   pubDate: string
+  description?: string
+  encoded?: string
 }
 
-interface HatenaBlogFeed {
-  item: HatenaBlogItem[]
+interface RSSFeed {
+  item: RSSItem[]
 }
 
 interface YQLApi<T> {
