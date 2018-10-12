@@ -4,13 +4,15 @@ import fetchArticlesFromScrapbox from './fetchArticlesStrategies/fetchArticlesFr
 import fetchArticlesFromHatenaBlog from './fetchArticlesStrategies/fetchArticlesFromHatenaBlog'
 import fetchArticlesFromMedium from './fetchArticlesStrategies/fetchArticlesFromMedium'
 import fetchRepositoriesFromGithub from './fetchArticlesStrategies/fetchRepositoriesFromGithub'
+import fetchArticlesFromNote from './fetchArticlesStrategies/fetchArticlesFromNote'
 
 const FETCH_ARTICLES_STRATEGIES = [
   fetchArticlesFromQiita,
   fetchArticlesFromScrapbox,
   fetchArticlesFromHatenaBlog,
   fetchArticlesFromMedium,
-  fetchRepositoriesFromGithub
+  fetchRepositoriesFromGithub,
+  fetchArticlesFromNote
 ]
 
 const fetchArticles = async () => {
