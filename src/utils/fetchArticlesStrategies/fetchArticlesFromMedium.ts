@@ -6,7 +6,7 @@ const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
 const MEDIUM_ENDPOINT = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'https%3A%2F%2Fmedium.com%2Ffeed%2F%40otakumesi'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
 
-const fetchArticlesFromHatenaBlog = async () => {
+const fetchArticlesFromMedium = async () => {
   const mediumFeed:YQLApi<RSSFeed> = await fetch(MEDIUM_ENDPOINT)
     .then(items => {
       if(items.status !== 200) {
@@ -43,4 +43,4 @@ const buildMediumArticle = (item:RSSItem) => {
   }
 }
 
-export default fetchArticlesFromHatenaBlog
+export default fetchArticlesFromMedium
