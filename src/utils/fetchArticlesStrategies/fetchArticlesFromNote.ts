@@ -1,33 +1,37 @@
 import * as format from 'date-fns/format'
 import * as Sentry from '@sentry/browser'
+import { xml2js } from 'xml-js'
+
 import extractTextFromHTML from '../extractTextFromHTML'
 
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
-const NOTE_ENDPOINT = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'https%3A%2F%2Fnote.mu%2Fotakumesi%2Frss'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+const NOTE_ENDPOINT = "https://note.mu/otakumesi/rss"
 
 const fetchArticlesFromNote = async () => {
-  const noteFeed:YQLApi<RSSFeed> = await fetch(NOTE_ENDPOINT)
+  const noteFeedResponse = await fetch(NOTE_ENDPOINT)
     .then(items => {
       if(items.status !== 200) {
         return null
       }
-      return items.json()
+      return items
     })
     .catch(err => {
       Sentry.captureException(err)
       return null
     })
+  if (!noteFeedResponse) return null
 
-  if (!noteFeed) return null
+  const noteFeedXML = await noteFeedResponse.text()
+  const noteFeed = xml2js(noteFeedXML, {compact: true}) as XMLFeed
 
-  if(noteFeed.query.results.item instanceof Array) {
-    return noteFeed.query.results.item.map(item => {
+  if(noteFeed.rss.channel.item instanceof Array) {
+    return noteFeed.rss.channel.item.map(item => {
       return buildNoteArticle(item)
     })
   }
 
-  return Array.of(buildNoteArticle(noteFeed.query.results.item))
+  return Array.of(buildNoteArticle(noteFeed.rss.channel.item))
 }
 
 const buildNoteArticle = (item:RSSItem) => {

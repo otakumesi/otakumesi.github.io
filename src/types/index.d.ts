@@ -26,9 +26,14 @@ interface RSSItem {
 }
 
 interface RSSFeed {
-  item: RSSItem[]
+  rss: {
+    channel: {
+      item: RSSItem[]
+    }
+  }
 }
 
+// TODO: 削除予定
 interface YQLApi<T> {
   query: {
     results: T

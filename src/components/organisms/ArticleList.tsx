@@ -4,7 +4,6 @@ import { isEmpty, times } from 'lodash-es'
 
 import Article from '../organisms/Article'
 import DuumyArticle from './DummyArticle'
-import withArticleConsumer from '../../contexts/articles/withArticleConsumer'
 
 const DummyArticleNumber = 25
 
@@ -40,4 +39,4 @@ const ArticleList:React.SFC<ArticleState> = (store) => {
   )
 }
 
-export default withArticleConsumer(ArticleList)
+export default ArticleList

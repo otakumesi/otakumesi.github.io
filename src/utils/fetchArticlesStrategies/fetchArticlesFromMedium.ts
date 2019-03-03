@@ -4,10 +4,10 @@ import extractTextFromHTML from '../extractTextFromHTML'
 
 const DATETIME_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
-const MEDIUM_ENDPOINT = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'https%3A%2F%2Fmedium.com%2Ffeed%2F%40otakumesi'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+const MEDIUM_ENDPOINT = ""
 
 const fetchArticlesFromMedium = async () => {
-  const mediumFeed:YQLApi<RSSFeed> = await fetch(MEDIUM_ENDPOINT)
+  const mediumFeed = await fetch(MEDIUM_ENDPOINT)
     .then(items => {
       if(items.status !== 200) {
         return null
@@ -22,7 +22,7 @@ const fetchArticlesFromMedium = async () => {
   if (!mediumFeed) return null
 
   if(mediumFeed.query.results.item instanceof Array) {
-    return mediumFeed.query.results.item.map(item => {
+    return mediumFeed.query.results.item.map((item: RSSItem) => {
       return buildMediumArticle(item)
     })
   }

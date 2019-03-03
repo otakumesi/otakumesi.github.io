@@ -6,6 +6,7 @@ import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 import ArticleList from '../organisms/ArticleList'
 import ArticleProvider from '../../contexts/articles/ArticleProvider'
+import ArticleContext from '../../contexts/articles/context'
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -30,7 +31,9 @@ class IndexPage extends React.Component<{}, {}> {
       <PageTemplate header={<Header />} footer={<Footer />}>
         <PageWrapper>
           <ArticleProvider>
-            <ArticleList />
+            <ArticleContext.Consumer>
+              { state => <ArticleList {...state}/> }
+            </ArticleContext.Consumer>
           </ArticleProvider>
         </PageWrapper>
       </PageTemplate>
