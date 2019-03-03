@@ -25,7 +25,7 @@ interface RSSItem {
   encoded?: string
 }
 
-interface RSSFeed {
+interface XMLFeed {
   rss: {
     channel: {
       item: RSSItem[]
