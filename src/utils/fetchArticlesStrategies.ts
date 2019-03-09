@@ -4,7 +4,7 @@ import fetchArticlesFromQiita from './fetchArticlesStrategies/fetchArticlesFromQ
 import fetchArticlesFromHatenaBlog from './fetchArticlesStrategies/fetchArticlesFromHatenaBlog'
 // import fetchArticlesFromMedium from './fetchArticlesStrategies/fetchArticlesFromMedium'
 import fetchRepositoriesFromGithub from './fetchArticlesStrategies/fetchRepositoriesFromGithub'
-import fetchArticlesFromNote from './fetchArticlesStrategies/fetchArticlesFromNote'
+// import fetchArticlesFromNote from './fetchArticlesStrategies/fetchArticlesFromNote'
 
 const FETCH_ARTICLES_STRATEGIES = [
   fetchArticlesFromQiita,
@@ -12,7 +12,7 @@ const FETCH_ARTICLES_STRATEGIES = [
   fetchArticlesFromHatenaBlog,
   // fetchArticlesFromMedium,
   fetchRepositoriesFromGithub,
-  fetchArticlesFromNote
+  // fetchArticlesFromNote
 ]
 
 const fetchArticles = async () => {
