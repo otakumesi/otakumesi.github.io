@@ -1,18 +1,11 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "usage",
-        "targets": {
-          "browsers": [
-            "> 0.25%",
-            "Chrome >= 41",
-            "ie >= 11"
-          ]
-        },
-        "modules": false
-      }
-    ]
+     "@babel/preset-env",
+     "@babel/preset-react",
+     "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-runtime", { "regenerator": true, "corejs": 3 }]
   ]
 }
+

@@ -19,12 +19,14 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loaders: ['babel-loader', 'awesome-typescript-loader'],
+        loader: 'babel-loader',
         exclude: /node_modules/
       }
     ]
   },
   resolve: {
+    fallback: { "stream": require.resolve("stream-browserify") },
+    fallback: { "buffer": require.resolve("buffer/") },
     extensions: ['.tsx', '.ts', '.js']
   }
 }

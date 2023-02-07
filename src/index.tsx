@@ -1,8 +1,10 @@
+import 'core-js/stable'
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Sentry from '@sentry/browser'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+
 
 library.add(fab)
 
